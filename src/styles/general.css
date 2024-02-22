@@ -1,0 +1,25 @@
+.name-country {
+	color: rgb(27, 140, 245);
+	font-weight: bold;
+}
+
+.name-continent {
+	color: rgb(161, 161, 161);
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.name-pages {
+	color: rgb(161, 161, 161);
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.space {
+	margin: 10px 0;
+	font-size: 16px;
+}
+
+.background {
+	background-color: rgb(225, 250, 255);
+}

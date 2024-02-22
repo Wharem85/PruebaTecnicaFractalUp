@@ -128,13 +128,18 @@ const Home: React.FC = () => {
 						variant="filled"
           />
 			</Box>
-			<Grid sx={{marginLeft: windowSize.width <= 1200 ? 2 : 30, width: '90%', marginTop: 5}} container spacing={3}>
-				<Suspense fallback={<div>Cargando...</div>}>
-					{filteredCountries.map((countrie: any) => (
-						<CardsCountries key={countrie.code} country={countrie} setCountry={setCountry} setOpenModal={setOpenModal} />
-					))}
-				</Suspense>
-			</Grid>
+			{filteredCountries.length > 0 ? (
+				<Grid sx={{marginLeft: windowSize.width <= 1200 ? 2 : 30, width: '90%', marginTop: 5}} container spacing={3}>
+					<Suspense fallback={<div>Cargando...</div>}>
+
+						{filteredCountries.map((countrie: any) => (
+							<CardsCountries key={countrie.code} country={countrie} setCountry={setCountry} setOpenModal={setOpenModal} />
+						))}
+					</Suspense>
+				</Grid>
+				) : (
+					<div>Cargando...</div>
+			)}
 			<ModalCountry open={openModal} setOpen={setOpenModal} country={country} />
 		</div>
 	)
